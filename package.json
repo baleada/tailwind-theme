@@ -1,0 +1,50 @@
+{
+  "name": "@baleada/tailwind-config",
+  "version": "0.0.0",
+  "description": "An exquisite base config for Tailwind",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npx ava",
+    "prepare": "node scripts/prepare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/baleada/tailwind-config.git"
+  },
+  "homepage": "https://baleada.netlify.com",
+  "keywords": [
+    "baleada",
+    "tailwind",
+    "tailwind config"
+  ],
+  "author": {
+    "name": "Alex Vipond",
+    "email": "hello@alexvipond.dev",
+    "url": "https://alexvipond.dev"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/baleada/tailwind-config/issues"
+  },
+  "dependencies": {
+    "@baleada/linear-numeric": "^0.7.1",
+    "@baleada/prepare": "^0.1.1",
+    "@baleada/tailwind-config-utils": "^0.1.0"
+  },
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "@nuxtjs/eslint-config": "^2.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "ava": "^3.5.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-nuxt": "^0.5.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "rollup-plugin-babel": "^4.4.0"
+  }
+}
