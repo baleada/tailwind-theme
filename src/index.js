@@ -5,6 +5,9 @@ import { fractions, em, px, screen } from '@baleada/tailwind-config-utils'
 export default {
   theme: {
     ...linearNumeric(),
+    colors: {
+      ...linearNumeric({ only: 'colors', increment: 10 }) // Tailwind will be adding in-between shades e.g. purple-850
+    },
     spacing: {
       ...linearNumeric({ only: 'spacing' }),
       ...px({

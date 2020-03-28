@@ -1,6 +1,6 @@
 {
   "name": "@baleada/tailwind-config",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "An exquisite base config for Tailwind",
   "main": "lib/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "url": "https://gitlab.com/baleada/tailwind-config/issues"
   },
   "dependencies": {
-    "@baleada/linear-numeric": "^0.7.1",
+    "@baleada/linear-numeric": "^0.7.2",
     "@baleada/prepare": "^0.1.1",
     "@baleada/tailwind-config-utils": "^0.1.0"
   },
