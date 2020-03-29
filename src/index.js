@@ -6,6 +6,9 @@ export default {
   theme: {
     ...linearNumeric(),
     colors: {
+      current: 'currentColor',
+      inherit: 'inherit',
+      ...defaultTheme.colors,
       ...linearNumeric({ only: 'colors', increment: 10 }) // Tailwind will be adding in-between shades e.g. purple-850
     },
     spacing: {
