@@ -27,9 +27,9 @@
     "url": "https://gitlab.com/baleada/tailwind-config/issues"
   },
   "dependencies": {
-    "@baleada/linear-numeric": "^0.7.3",
     "@baleada/prepare": "^0.1.1",
-    "@baleada/tailwind-config-utils": "^0.1.0"
+    "@baleada/tailwind-config-utils": "^0.2.0",
+    "@baleada/tailwind-linear-numeric": "^0.8.1"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",

@@ -1,5 +1,5 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
-import linearNumeric from '@baleada/linear-numeric'
+import linearNumeric from '@baleada/tailwind-linear-numeric'
 import { fractions, em, px, screen } from '@baleada/tailwind-config-utils'
 
 export default {
@@ -10,6 +10,10 @@ export default {
       inherit: 'inherit',
       ...defaultTheme.colors,
       ...linearNumeric({ only: 'colors', increment: 10 }) // Tailwind will be adding in-between shades e.g. purple-850
+    },
+    screens: {
+      ...defaultTheme.screens,
+      all: 0,
     },
     spacing: {
       ...linearNumeric({ only: 'spacing' }),
@@ -46,8 +50,9 @@ export default {
     }),
     minHeight: {
       ...linearNumeric({ only: 'minHeight' }),
+      ...screen(theme('screens')),
       ...fractions('%'),
-      ...fractions('vh')
+      ...fractions('vh'),
     },
     maxHeight: {
       ...linearNumeric({ only: 'maxHeight' }),
