@@ -33,7 +33,7 @@
   "devDependencies": {
     "@ava/babel": "^1.0.1",
     "@baleada/tailwind-linear-numeric": "^0.8.6",
-    "@baleada/tailwind-theme-utils": "^0.4.1",
+    "@baleada/tailwind-theme-utils": "^0.4.2",
     "@nuxtjs/eslint-config": "^2.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "ava": "^3.6.0",
