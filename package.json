@@ -1,6 +1,6 @@
 {
   "name": "@baleada/tailwind-theme",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "An exquisite theme configuration for Tailwind",
   "main": "lib/index.js",
   "scripts": {
@@ -28,12 +28,12 @@
     "url": "https://gitlab.com/baleada/tailwind-theme/issues"
   },
   "dependencies": {
-    "@baleada/prepare": "^0.1.1",
-    "@baleada/tailwind-linear-numeric": "^0.8.3",
-    "@baleada/tailwind-theme-utils": "^0.4.0"
+    "@baleada/prepare": "^0.1.1"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",
+    "@baleada/tailwind-linear-numeric": "^0.8.5",
+    "@baleada/tailwind-theme-utils": "^0.4.0",
     "@nuxtjs/eslint-config": "^2.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "ava": "^3.6.0",
@@ -50,6 +50,8 @@
     "tailwindcss": "^1.2.0"
   },
   "peerDependencies": {
-    "tailwindcss": "1.2.x"
+    "tailwindcss": "1.2.x",
+    "@baleada/tailwind-linear-numeric": "^0.x",
+    "@baleada/tailwind-theme-utils": "^0.x"
   }
 }
