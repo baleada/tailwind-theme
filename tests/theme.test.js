@@ -36,3 +36,11 @@ function deepEqualExceptOrder (array1, array2, property) {
     })
   )
 }
+
+test('includes non-palette colors', t => {
+  const resolvedConfig = resolveConfig({ theme }),
+        hues = Object.keys(resolvedConfig.theme.colors),
+        nonPaletteColors = ['black', 'white', 'transparent', 'inherit', 'current']
+
+  t.assert(nonPaletteColors.every(hue => hues.includes(hue)))
+})

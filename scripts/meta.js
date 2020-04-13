@@ -104,7 +104,7 @@ const prefixes = {
   blue: {
     name: 'Colors',
     prefix: 'bg-blue',
-    notes: 'Blue is shown here as an example, but Baleada Theme includes all of the default Tailwind colors.',
+    notes: 'Blue is shown here as an example, but Baleada Theme includes all of the default Tailwind colors.\n\nBaleada Theme also includes Tailwind\'s default standalone colors `black`, `white`, and `transparent`, and adds `current` and `inherit` to expose those keyword colors.',
   },
   borderRadius: {
     name: 'Border radius',

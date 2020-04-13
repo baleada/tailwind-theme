@@ -7,7 +7,6 @@ export default {
   colors: {
     current: 'currentColor',
     inherit: 'inherit',
-    ...defaultTheme.colors,
     ...linearNumeric({ only: 'colors', increment: 10 }), // Tailwind will be adding in-between shades e.g. purple-850
   },
   screens: {
@@ -24,11 +23,11 @@ export default {
       '5': '8px',
     }),
     ...em({
-      '2': '0.25em',
-      '3': '.5em',
-      '4': '1em',
-      '5': '1.25em',
-      '6': '1.5em',
+      '1/4': '0.25em',
+      '1/2': '.5em',
+      '1': '1em',
+      '5/4': '1.25em',
+      '3/2': '1.5em',
     }),
   },
   height: theme => ({
@@ -37,10 +36,10 @@ export default {
     ...fractions({ unit: 'vh', mode: 'baleada' }),
   }),
   minWidth: theme => ({
-    ...linearNumeric({ only: 'minWidth' }),
-    ...screen(theme('screens')),
+    ...linearNumeric({ only: 'maxWidth' }),
+    ...screen(theme('screens')), // Already comes with screens but I'm including here to be explicit
     ...fractions({ unit: '%', mode: 'baleada' }),
-    ...fractions({ unit: 'vw', mode: 'baleada' }),
+    ...fractions({ unit: 'vh', mode: 'baleada' }),
   }),
   maxWidth: theme => ({
     ...linearNumeric({ only: 'maxWidth' }),

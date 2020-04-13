@@ -19,11 +19,11 @@ const baleadaScreens = {
             '5': 'stub',
           }),
           ...em({
-            '2': 'stub',
-            '3': 'stub',
-            '4': 'stub',
-            '5': 'stub',
-            '6': 'stub',
+            '1/4': 'stub',
+            '1/2': 'stub',
+            '1': 'stub',
+            '5/4': 'stub',
+            '3/2': 'stub',
           }),
         })
       ]
@@ -62,10 +62,10 @@ export default {
   ],
   minWidth: [
     ...Object.keys({
-      ...linearNumeric({ only: 'minWidth' }),
-      ...screen(baleadaScreens),
+      ...linearNumeric({ only: 'maxWidth' }),
+      ...screen(baleadaScreens), // Already comes with screens but I'm including here to be explicit
       ...fractions({ unit: '%', mode: 'baleada' }),
-      ...fractions({ unit: 'vw', mode: 'baleada' }),
+      ...fractions({ unit: 'vh', mode: 'baleada' }),
     }),
   ],
   maxWidth: [

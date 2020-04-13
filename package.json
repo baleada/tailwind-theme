@@ -1,6 +1,6 @@
 {
   "name": "@baleada/tailwind-theme",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "description": "An exquisite theme configuration for Tailwind",
   "main": "lib/index.js",
   "scripts": {
@@ -32,8 +32,8 @@
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",
-    "@baleada/tailwind-linear-numeric": "^0.8.5",
-    "@baleada/tailwind-theme-utils": "^0.4.0",
+    "@baleada/tailwind-linear-numeric": "^0.8.6",
+    "@baleada/tailwind-theme-utils": "^0.4.1",
     "@nuxtjs/eslint-config": "^2.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "ava": "^3.6.0",
