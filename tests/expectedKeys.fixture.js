@@ -1,18 +1,127 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+import linearNumeric from '@baleada/tailwind-linear-numeric'
+import { fractions, em, px, screen } from '@baleada/tailwind-theme-utils'
+
+// Functions used to generate keys here are all tested more explicitly in their individual packages
+
+const baleadaScreens = {
+        ...defaultTheme.screens,
+        'all': 'stub',
+      },
+      baleadaSpacing = [
+        ...Object.keys({
+          ...linearNumeric({ only: 'spacing' }),
+          ...px({
+            '1': 'stub',
+            '2': 'stub',
+            '3': 'stub',
+            '4': 'stub',
+            '5': 'stub',
+          }),
+          ...em({
+            '2': 'stub',
+            '3': 'stub',
+            '4': 'stub',
+            '5': 'stub',
+            '6': 'stub',
+          }),
+        })
+      ]
+
 export default {
-  colors: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
-  spacing: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', 'px-1'],
-  borderRadius: ['0', '3', '4', '5', '6', 'full'],
-  borderWidth: ['0', '4', '5', '6', '7'],
-  boxShadow: ['0', '2', '3', '4', '5', '6', '7', '8', '-4', 'outline'],
-  flexGrow: ['0', '4'],
-  flexShrink: ['0', '4'],
-  fontSize: ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11'],
-  fontWeight: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
-  letterSpacing: ['0', '1', '2', '3', '-2', '-1'],
-  lineHeight: ['0', '2', '3', '4', '5', '6', 'rem-3', 'rem-4', 'rem-5', 'rem-6', 'rem-7', 'rem-8', 'rem-9', 'rem-10'],
-  minWidth: ['0', 'full'],
-  minHeight: ['0', 'full'],
-  maxHeight: ['0', 'full', 'screen'],
-  strokeWidth: ['0', '1', '2'],
-  transitionDuration: ['1', '2', '3', '4', '5', '6', '7', '8'],
+  colors: [
+    ...Object.keys(linearNumeric({ only: 'colors', increment: 10 }).blue),
+  ],
+  spacing: [
+    ...baleadaSpacing,
+  ],
+  height: [
+    ...baleadaSpacing,
+    'auto',
+    ...Object.keys({
+      ...fractions({ unit: '%', mode: 'baleada' }),
+      ...fractions({ unit: 'vh', mode: 'baleada' }),
+    })
+  ],
+  width: [
+    ...baleadaSpacing,
+    'auto',
+    ...Object.keys({
+      ...fractions({ unit: '%', mode: 'baleada' }),
+      ...fractions({ unit: 'vw', mode: 'baleada' }),
+      ...screen(baleadaScreens),
+    }),
+  ],
+  inset: [
+    ...baleadaSpacing,
+    'auto',
+    'screen',
+    ...Object.keys({
+      ...fractions({ unit: '%', mode: 'baleada' }),
+    }),
+  ],
+  minWidth: [
+    ...Object.keys({
+      ...linearNumeric({ only: 'minWidth' }),
+      ...screen(baleadaScreens),
+      ...fractions({ unit: '%', mode: 'baleada' }),
+      ...fractions({ unit: 'vw', mode: 'baleada' }),
+    }),
+  ],
+  maxWidth: [
+    ...Object.keys({
+      ...linearNumeric({ only: 'maxWidth' }),
+      ...screen(baleadaScreens),
+      ...fractions({ unit: '%', mode: 'baleada' }),
+      ...fractions({ unit: 'vh', mode: 'baleada' }),
+    }),
+  ],
+  minHeight: [
+    ...Object.keys({
+      ...linearNumeric({ only: 'minHeight' }),
+      ...screen(baleadaScreens),
+      ...fractions({ unit: '%', mode: 'baleada' }),
+      ...fractions({ unit: 'vh', mode: 'baleada' }),
+    }),
+  ],
+  maxHeight: [
+    ...Object.keys({
+      ...linearNumeric({ only: 'maxHeight' }),
+      ...fractions({ unit: '%', mode: 'baleada' }),
+      ...fractions({ unit: 'vh', mode: 'baleada' }),
+    }),
+  ],
+  borderRadius: [
+    ...Object.keys(linearNumeric({ only: 'borderRadius' })),
+  ],
+  borderWidth: [
+    ...Object.keys(linearNumeric({ only: 'borderWidth' })),
+  ],
+  boxShadow: [
+    ...Object.keys(linearNumeric({ only: 'boxShadow' })),
+  ],
+  flexGrow: [
+    ...Object.keys(linearNumeric({ only: 'flexGrow' })),
+  ],
+  flexShrink: [
+    ...Object.keys(linearNumeric({ only: 'flexShrink' })),
+  ],
+  fontSize: [
+    ...Object.keys(linearNumeric({ only: 'fontSize' })),
+  ],
+  fontWeight: [
+    ...Object.keys(linearNumeric({ only: 'fontWeight' })),
+  ],
+  letterSpacing: [
+    ...Object.keys(linearNumeric({ only: 'letterSpacing' })),
+  ],
+  lineHeight: [
+    ...Object.keys(linearNumeric({ only: 'lineHeight' })),
+  ],
+  strokeWidth: [
+    ...Object.keys(linearNumeric({ only: 'strokeWidth' })),
+  ],
+  transitionDuration: [
+    ...Object.keys(linearNumeric({ only: 'transitionDuration' })),
+  ],
 }

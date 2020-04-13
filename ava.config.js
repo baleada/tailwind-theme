@@ -8,6 +8,7 @@ export default {
     compileAsTests: [
       'src/**/*.js',
       'tests/**/*.stub.js',
+      'tests/**/*.fixture.js',
     ],
     testOptions: {
       presets: [

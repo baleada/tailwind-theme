@@ -3,8 +3,8 @@ import resolve from '@rollup/plugin-node-resolve'
 
 const external = [
         'tailwindcss/defaultTheme',
-        '@baleada/linear-numeric',
-        '@baleada/tailwind-config-utils',
+        '@baleada/tailwind-linear-numeric',
+        '@baleada/tailwind-theme-utils',
       ],
       plugins = [
         babel({
