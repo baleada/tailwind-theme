@@ -11,6 +11,7 @@ function meta () {
   empty('metadata/class-references')
   const baleadaThemeProperties = Object.keys(prefixes),
         propertyMetadata = baleadaThemeProperties.map(property => {
+          console.log(property)
           const suffixes = property === 'blue' 
                   ? Object.keys(resolvedBaleadaTheme.colors.blue) 
                   : Object.keys(resolvedBaleadaTheme[property])
@@ -55,7 +56,6 @@ function meta () {
 
 function toClassReferences (propertyMetadata) {
   return propertyMetadata.map(({ property, name, prefix, notes, suffixMetadata }) => {
-    console.log(name)
     const tableBody = suffixMetadata.reduce((tableBody, { suffix, value, tailwindEquivalent }, index) => {
       return `\
 ${tableBody}${index === 0 ? '' : '\n'}\
@@ -181,6 +181,11 @@ const prefixes = {
     prefix: 'duration',
     notes: '',
   },
+  transitionDelay: {
+    name: 'Transition delay',
+    prefix: 'delay',
+    notes: '',
+  },
   screens: {
     name: 'Screens',
     prefix: '',
@@ -199,17 +204,37 @@ const prefixes = {
   inset: {
     name: 'Inset',
     prefix: 'top',
-    notes: 'Top is shown here as an example, but the same configuration applies for `right`, `bottom`, and `left`.',
+    notes: '`.top` is shown here as an example, but the same configuration applies for `.right`, `.bottom`, and `.left`.',
   },
   margin: {
     name: 'Margin',
     prefix: 'm',
-    notes: '',
+    notes: '`.m` is shown here, but the same configuration applies for `.mt`, `.mr`, `.mb`, `.ml`, `.mx`, and `.my`.',
   },
   padding: {
     name: 'Padding',
     prefix: 'p',
-    notes: '',
+    notes: '`.p` is shown here, but the same configuration applies for `.pt`, `.pr`, `.pb`, `.pl`, `.px`, and `.py`.',
+  },
+  translate: {
+    name: 'Translate',
+    prefix: 'translate-x',
+    notes: '`.translate-x` is shown here, but the same configuration applies for `.translate-y`.',
+  },
+  gap: {
+    name: 'Gap',
+    prefix: 'gap',
+    notes: '`.gap` is shown here, but the same configuration applies for `.row-gap` and `.col-gap`.',
+  },
+  space: {
+    name: 'Space',
+    prefix: 'space-x',
+    notes: '`.space-x` is shown here, but the same configuration applies for `.space-y`.',
+  },
+  divideWidth: {
+    name: 'Divide width',
+    prefix: 'divide-x',
+    notes: '`.divide-x` is shown here, but the same configuration applies for `.divide-y`.',
   },
   objectPosition: {
     name: 'Object position',

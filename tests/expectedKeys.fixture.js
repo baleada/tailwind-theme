@@ -124,4 +124,7 @@ export default {
   transitionDuration: [
     ...Object.keys(linearNumeric({ only: 'transitionDuration' })),
   ],
+  transitionDelay: [
+    ...Object.keys(linearNumeric({ only: 'transitionDelay' })),
+  ],
 }
