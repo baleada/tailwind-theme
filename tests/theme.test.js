@@ -10,7 +10,7 @@ properties.forEach(property => {
           propertyTheme = property === 'colors' ? resolvedConfig.theme.colors.blue : resolvedConfig.theme[property],
           keys = Object.keys(propertyTheme),
           assertion = deepEqualExceptOrder(keys, expectedKeys[property], property)
-  
+          
     t.assert(assertion)
   })
 })

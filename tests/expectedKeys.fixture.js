@@ -46,23 +46,17 @@ export default {
   width: [
     ...baleadaSpacing,
     'auto',
+    'min',
+    'max',
     ...Object.keys({
       ...fractions({ unit: '%', mode: 'baleada' }),
       ...fractions({ unit: 'vw', mode: 'baleada' }),
       ...screen(baleadaScreens),
     }),
   ],
-  inset: [
-    ...baleadaSpacing,
-    'auto',
-    'screen',
-    ...Object.keys({
-      ...fractions({ unit: '%', mode: 'baleada' }),
-    }),
-  ],
   minWidth: [
     ...Object.keys({
-      ...linearNumeric({ only: 'maxWidth' }),
+      ...defaultTheme.minWidth,
       ...screen(baleadaScreens), // Already comes with screens but I'm including here to be explicit
       ...fractions({ unit: '%', mode: 'baleada' }),
       ...fractions({ unit: 'vh', mode: 'baleada' }),
@@ -78,7 +72,7 @@ export default {
   ],
   minHeight: [
     ...Object.keys({
-      ...linearNumeric({ only: 'minHeight' }),
+      ...defaultTheme.minHeight,
       ...screen(baleadaScreens),
       ...fractions({ unit: '%', mode: 'baleada' }),
       ...fractions({ unit: 'vh', mode: 'baleada' }),

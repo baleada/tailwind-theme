@@ -5,9 +5,8 @@ import { fractions, withoutTailwindFractions, em, px, screen } from '@baleada/ta
 export default {
   ...linearNumeric(),
   colors: {
-    current: 'currentColor',
     inherit: 'inherit',
-    ...linearNumeric({ only: 'colors', increment: 10 }), // Tailwind will be adding in-between shades e.g. purple-850
+    ...linearNumeric({ only: 'colors', increment: 10 }), // Tailwind 2.0.0 adding 50-level shades. Default linear numeric is bg-{color}-0.5 but I prefer bg-{color}-5 in most cases.
   },
   screens: {
     ...defaultTheme.screens,
@@ -32,41 +31,37 @@ export default {
   },
   height: theme => ({
     ...defaultTheme.height(theme),
-    ...fractions({ unit: '%', mode: 'baleada' }),
-    ...fractions({ unit: 'vh', mode: 'baleada' }),
+    ...fractions({ unit: '%', set: 'baleada' }),
+    ...fractions({ unit: 'vh', set: 'baleada' }),
   }),
   minWidth: theme => ({
-    ...linearNumeric({ only: 'maxWidth' }),
-    ...screen(theme('screens')), // Already comes with screens but I'm including here to be explicit
-    ...fractions({ unit: '%', mode: 'baleada' }),
-    ...fractions({ unit: 'vh', mode: 'baleada' }),
+    ...defaultTheme.minWidth,
+    ...screen(theme('screens')),
+    ...fractions({ unit: '%', set: 'baleada' }),
+    ...fractions({ unit: 'vh', set: 'baleada' }),
   }),
   maxWidth: theme => ({
     ...linearNumeric({ only: 'maxWidth' }),
     ...screen(theme('screens')), // Already comes with screens but I'm including here to be explicit
-    ...fractions({ unit: '%', mode: 'baleada' }),
-    ...fractions({ unit: 'vh', mode: 'baleada' }),
+    ...fractions({ unit: '%', set: 'baleada' }),
+    ...fractions({ unit: 'vh', set: 'baleada' }),
   }),
   minHeight: theme => ({
-    ...linearNumeric({ only: 'minHeight' }),
+    ...defaultTheme.minHeight,
     ...screen(theme('screens')), // Useful when styling landing pages to look nice in landscape orientation on mobile devices
-    ...fractions({ unit: '%', mode: 'baleada' }),
-    ...fractions({ unit: 'vh', mode: 'baleada' }),
+    ...fractions({ unit: '%', set: 'baleada' }),
+    ...fractions({ unit: 'vh', set: 'baleada' }),
   }),
   maxHeight: {
-    ...linearNumeric({ only: 'maxHeight' }),
-    ...fractions({ unit: '%', mode: 'baleada' }),
-    ...fractions({ unit: 'vh', mode: 'baleada' }),
+    ...defaultTheme.maxHeight,
+    ...fractions({ unit: '%', set: 'baleada' }),
+    ...fractions({ unit: 'vh', set: 'baleada' }),
   },
   width: theme => ({
     ...withoutTailwindFractions(defaultTheme.width(theme)),
-    ...fractions({ unit: '%', mode: 'baleada' }),
-    ...fractions({ unit: 'vw', mode: 'baleada' }),
+    ...fractions({ unit: '%', set: 'baleada' }),
+    ...fractions({ unit: 'vw', set: 'baleada' }),
     ...screen(theme('screens')),
-  }),
-  inset: theme => ({
-    ...withoutTailwindFractions(defaultTheme.width(theme)),
-    ...fractions({ unit: '%', mode: 'baleada' }),
   }),
   objectPosition: {
     ...defaultTheme.objectPosition,
@@ -74,33 +69,8 @@ export default {
     'center-bottom': 'center bottom',
   },
   opacity: {
-    '0': '0',
-    '10': '.10',
-    '20': '.20',
-    '25': '.25',
-    '30': '.30',
+    ...defaultTheme.opacity,
     '33': '.33',
-    '40': '.40',
-    '50': '.50',
-    '60': '.60',
     '67': '.67',
-    '70': '.70',
-    '75': '.75',
-    '80': '.80',
-    '90': '.90',
-    '100': '1.00',
-  },
-  zIndex: {
-    '0': '0',
-    '10': '10',
-    '20': '20',
-    '30': '30',
-    '40': '40',
-    '50': '50',
-    '60': '60',
-    '70': '70',
-    '80': '80',
-    '90': '90',
-    '100': '100',
   },
 }
