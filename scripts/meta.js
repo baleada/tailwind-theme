@@ -5,7 +5,6 @@ const fs = require('fs'),
       resolveConfig = require('tailwindcss/resolveConfig'),
       resolvedBaleadaTheme = resolveConfig({ theme: baleadaTheme }).theme,
       resolvedDefaultTheme = resolveConfig(defaultConfig).theme
-
   
 function meta () {
   empty('metadata/class-references')
@@ -244,11 +243,6 @@ const prefixes = {
   opacity: {
     name: 'Opacity',
     prefix: 'opacity',
-    notes: '',
-  },
-  zIndex: {
-    name: 'Z-index',
-    prefix: 'z',
     notes: '',
   },
 }

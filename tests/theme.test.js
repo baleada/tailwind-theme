@@ -1,6 +1,7 @@
 import test  from 'ava'
 import theme from '../src'
 import resolveConfig from 'tailwindcss/resolveConfig'
+import defaultConfig from 'tailwindcss/defaultConfig'
 import expectedKeys from './expectedKeys.fixture'
 
 const properties = Object.keys(expectedKeys)

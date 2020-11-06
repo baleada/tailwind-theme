@@ -30,7 +30,7 @@ export default {
     }),
   },
   height: theme => ({
-    ...defaultTheme.height(theme),
+    ...withoutTailwindFractions(defaultTheme.height(theme)),
     ...fractions({ unit: '%', set: 'baleada' }),
     ...fractions({ unit: 'vh', set: 'baleada' }),
   }),
