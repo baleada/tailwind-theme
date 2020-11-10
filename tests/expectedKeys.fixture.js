@@ -115,6 +115,12 @@ export default {
   strokeWidth: [
     ...Object.keys(linearNumeric({ only: 'strokeWidth' })),
   ],
+  ringOffsetWidth: [
+    ...Object.keys(linearNumeric({ only: 'ringOffsetWidth' })),
+  ],
+  ringWidth: [
+    ...Object.keys(linearNumeric({ only: 'ringWidth' })),
+  ],
   transitionDuration: [
     ...Object.keys(linearNumeric({ only: 'transitionDuration' })),
   ],
