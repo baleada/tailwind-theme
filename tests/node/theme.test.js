@@ -1,22 +1,24 @@
-import test  from 'ava'
-import theme from '../src'
-import resolveConfig from 'tailwindcss/resolveConfig'
-import defaultConfig from 'tailwindcss/defaultConfig'
-import expectedKeys from './expectedKeys.fixture'
+import { suite as createSuite } from 'uvu'
+import * as assert from 'uvu/assert'
+import theme from '../../src/index.js'
+import resolveConfig from 'tailwindcss/resolveConfig.js'
+import expectedKeys from '../fixtures/expectedKeys.js'
+
+const suite = createSuite('theme (node)')
 
 const properties = Object.keys(expectedKeys)
 properties.forEach(property => {
-  test(`properly configures ${property}`, t => {
+  suite(`properly configures ${property}`, context => {
     const resolvedConfig = resolveConfig({ theme }),
           propertyTheme = property === 'colors' ? resolvedConfig.theme.colors.blue : resolvedConfig.theme[property],
           keys = Object.keys(propertyTheme),
-          assertion = deepEqualExceptOrder(keys, expectedKeys[property], property)
+          assertion = equalExceptOrder(keys, expectedKeys[property], property)
           
-    t.assert(assertion)
+    assert.ok(assertion)
   })
 })
 
-function deepEqualExceptOrder (array1, array2, property) {
+function equalExceptOrder (array1, array2, property) {
   return (
     array1.every(item => {
       if (array2.includes(item)) {
@@ -38,10 +40,12 @@ function deepEqualExceptOrder (array1, array2, property) {
   )
 }
 
-test('includes non-palette colors', t => {
+suite('includes non-palette colors', context => {
   const resolvedConfig = resolveConfig({ theme }),
         hues = Object.keys(resolvedConfig.theme.colors),
         nonPaletteColors = ['black', 'white', 'transparent', 'inherit', 'current']
 
-  t.assert(nonPaletteColors.every(hue => hues.includes(hue)))
+  assert.ok(nonPaletteColors.every(hue => hues.includes(hue)))
 })
+
+suite.run()

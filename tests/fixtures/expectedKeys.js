@@ -1,4 +1,4 @@
-import defaultTheme from 'tailwindcss/defaultTheme'
+import defaultTheme from 'tailwindcss/defaultTheme.js'
 import linearNumeric from '@baleada/tailwind-linear-numeric'
 import { fractions, em, px, screen } from '@baleada/tailwind-theme-utils'
 

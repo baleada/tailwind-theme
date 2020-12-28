@@ -14,7 +14,7 @@ function docs () {
           console.log(property)
           const suffixes = property === 'blue' 
                   ? Object.keys(resolvedBaleadaTheme.colors.blue) 
-                  : Object.keys(resolvedBaleadaTheme[property])
+                  : Object.keys(resolvedBaleadaTheme[property]),
                 suffixMetadata = suffixes.map(suffix => {
                   const value = property === 'blue' 
                     ? resolvedBaleadaTheme.colors.blue[suffix] 
