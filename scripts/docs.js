@@ -1,13 +1,14 @@
-const fs = require('fs'),
-      { empty } = require('@baleada/prepare'),
-      baleadaTheme = require('../lib/index.js'),
-      defaultConfig = require('tailwindcss/defaultConfig'),
-      resolveConfig = require('tailwindcss/resolveConfig'),
-      resolvedBaleadaTheme = resolveConfig({ theme: baleadaTheme }).theme,
+import { writeFileSync } from 'fs'
+import { empty } from '@baleada/prepare'
+import baleadaTheme from '../lib/index.js'
+import defaultConfig from 'tailwindcss/defaultConfig.js'
+import resolveConfig from 'tailwindcss/resolveConfig.js'
+
+const resolvedBaleadaTheme = resolveConfig({ theme: baleadaTheme }).theme,
       resolvedDefaultTheme = resolveConfig(defaultConfig).theme
   
-function meta () {
-  empty('metadata/class-references')
+function docs () {
+  empty('docs/class-references')
   const baleadaThemeProperties = Object.keys(prefixes),
         propertyMetadata = baleadaThemeProperties.map(property => {
           console.log(property)
@@ -46,8 +47,8 @@ function meta () {
         classReferences = toClassReferences(propertyMetadata)
 
   classReferences.forEach(({ name, contents }) => {
-    fs.writeFileSync(
-      `./metadata/class-references/${name.toLowerCase().replace(/ /g, '-')}.md`,
+    writeFileSync(
+      `./docs/class-references/${name.toLowerCase().replace(/ /g, '-')}.md`,
       contents
     )
   })
@@ -247,4 +248,4 @@ const prefixes = {
   },
 }
 
-meta()
+docs()

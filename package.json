@@ -2,13 +2,18 @@
   "name": "@baleada/tailwind-theme",
   "version": "0.2.2",
   "description": "An exquisite theme configuration for Tailwind",
-  "main": "lib/index.js",
-  "module": "lib/index.esm.js",
+  "type": "module",
+  "main": "lib/index.cjs",
+  "module": "lib/index.js",
+  "exports": {
+    "require": "./lib/index.cjs",
+    "import": "./lib/index.js"
+  },
   "scripts": {
-    "test": "npx ava",
-    "prepare": "node scripts/prepare",
-    "meta": "node scripts/meta",
-    "link": "npm link @baleada/tailwind-linear-numeric @baleada/tailwind-theme-utils"
+    "prepare": "rollup --config rollup.config.js",
+    "test:only": "run() { npx uvu tests/$2 $1.test.js$; }; run",
+    "test": "npm run test:only .",
+    "docs": "node scripts/docs.js"
   },
   "repository": {
     "type": "git",
@@ -31,30 +36,13 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "@baleada/tailwind-linear-numeric": "^0.9.4",
-    "@baleada/tailwind-theme-utils": "^0.5.0"
+    "@baleada/tailwind-linear-numeric": "^0.10.0",
+    "@baleada/tailwind-theme-utils": "^0.6.0"
   },
   "devDependencies": {
-    "@ava/babel": "^1.0.1",
-    "@babel/plugin-transform-runtime": "^7.12.1",
-    "@babel/preset-env": "^7.11.5",
-    "@baleada/prepare": "^0.1.1",
-    "@nuxtjs/eslint-config": "^2.0.2",
-    "@rollup/plugin-babel": "^5.2.1",
-    "@rollup/plugin-node-resolve": "^7.1.1",
-    "ava": "^3.6.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jest": "^23.8.2",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-nuxt": "^0.5.2",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "tailwindcss": "2.0.0-alpha.11"
-  },
-  "peerDependencies": {
-    "tailwindcss": "^2.0.0-alpha.11"
+    "@baleada/prepare": "^0.4.17",
+    "rollup": "^2.35.1",
+    "tailwindcss": "^2.0.1-compat",
+    "uvu": "^0.5.1"
   }
 }
