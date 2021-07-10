@@ -1,5 +1,5 @@
 import defaultTheme from 'tailwindcss/defaultTheme.js'
-import linearNumeric from '@baleada/tailwind-linear-numeric'
+import { linearNumeric } from '@baleada/tailwind-linear-numeric'
 import { fractions, screen } from '@baleada/tailwind-theme-utils'
 
 // Functions used to generate keys here are all tested more explicitly in their individual packages

@@ -1,8 +1,8 @@
 import defaultTheme from 'tailwindcss/defaultTheme.js'
-import linearNumeric from '@baleada/tailwind-linear-numeric'
+import { linearNumeric } from '@baleada/tailwind-linear-numeric'
 import { screen } from '@baleada/tailwind-theme-utils'
 
-export default {
+export const theme = {
   ...linearNumeric(),
   colors: {
     inherit: 'inherit',

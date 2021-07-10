@@ -1,6 +1,6 @@
 import { suite as createSuite } from 'uvu'
 import * as assert from 'uvu/assert'
-import theme from '../../src/index.js'
+import { theme } from '../../src/index.js'
 import resolveConfig from 'tailwindcss/resolveConfig.js'
 import expectedKeys from '../fixtures/expectedKeys.js'
 
