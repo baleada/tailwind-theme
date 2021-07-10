@@ -85,6 +85,9 @@ export default {
       ...fractions({ unit: 'vh', mode: 'baleada' }),
     }),
   ],
+  blur: [
+    ...Object.keys(linearNumeric({ only: 'blur' })),
+  ],
   borderRadius: [
     ...Object.keys(linearNumeric({ only: 'borderRadius' })),
   ],
@@ -93,6 +96,9 @@ export default {
   ],
   boxShadow: [
     ...Object.keys(linearNumeric({ only: 'boxShadow' })),
+  ],
+  dropShadow: [
+    ...Object.keys(linearNumeric({ only: 'dropShadow' })),
   ],
   flexGrow: [
     ...Object.keys(linearNumeric({ only: 'flexGrow' })),

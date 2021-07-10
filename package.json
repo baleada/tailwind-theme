@@ -36,13 +36,13 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5",
-    "@baleada/tailwind-linear-numeric": "^0.10.0",
+    "@baleada/tailwind-linear-numeric": "^0.10.1",
     "@baleada/tailwind-theme-utils": "^0.6.0"
   },
   "devDependencies": {
     "@baleada/prepare": "^0.4.17",
     "rollup": "^2.35.1",
-    "tailwindcss": "^2.0.1-compat",
+    "tailwindcss": "^2.2.4",
     "uvu": "^0.5.1"
   }
 }

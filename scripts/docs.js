@@ -48,7 +48,7 @@ function docs () {
 
   classReferences.forEach(({ name, contents }) => {
     writeFileSync(
-      `./docs/class-references/${name.toLowerCase().replace(/ /g, '-')}.md`,
+      `./docs/class-references/${name.toLowerCase().replace(/ /g, '-')}.prose`,
       contents
     )
   })
@@ -87,17 +87,21 @@ ${tableBody}\n\
 }
 
 function getClass (prefix, suffix, property) {
-  if (property === 'screens') {
-    return suffix === undefined
-      ? 'none'
-      : `\`${suffix}:\``
-  } else {
-    return suffix === undefined
-      ? 'none'
-      : suffix.startsWith('-')
-        ? `\`.-${prefix}-${suffix.split('').slice(1).join('')}\``
-        : `\`.${prefix}-${suffix}\``
-  }
+  const naiveClass = (() => {
+    if (property === 'screens') {
+      return suffix === undefined
+        ? 'none'
+        : `\`${suffix}:\``
+    } else {
+      return suffix === undefined
+        ? 'none'
+        : suffix.startsWith('-')
+          ? `\`.-${prefix}-${suffix.split('').slice(1).join('')}\``
+          : `\`.${prefix}-${suffix}\``
+    }
+  })()
+
+  return naiveClass.replace(/-DEFAULT/, '')
 }
 
 const prefixes = {
@@ -116,9 +120,19 @@ const prefixes = {
     prefix: 'border',
     notes: '',
   },
+  blur: {
+    name: 'Blur',
+    prefix: 'blur',
+    notes: '',
+  },
   boxShadow: {
     name: 'Box shadow',
     prefix: 'shadow',
+    notes: '',
+  },
+  dropShadow: {
+    name: 'Drop shadow',
+    prefix: 'drop-shadow',
     notes: '',
   },
   flexGrow: {
