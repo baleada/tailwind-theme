@@ -1,6 +1,6 @@
 {
   "name": "@baleada/tailwind-theme",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "An exquisite theme configuration for Tailwind",
   "type": "module",
   "main": "lib/index.cjs",
