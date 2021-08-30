@@ -10,7 +10,8 @@ const baleadaScreens = {
       },
       baleadaSpacing = Object.keys(linearNumeric({ only: 'spacing' }))
 
-export default {
+export const expectedPluginKeys = {
+  screens: [...Object.keys(defaultTheme.screens), 'all'],
   colors: Object.keys(linearNumeric({ only: 'colors', increment: 10 }).blue),
   spacing: [
     ...baleadaSpacing,

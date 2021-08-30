@@ -2,17 +2,17 @@ import { suite as createSuite } from 'uvu'
 import * as assert from 'uvu/assert'
 import { theme } from '../../src/index.js'
 import resolveConfig from 'tailwindcss/resolveConfig.js'
-import expectedKeys from '../fixtures/expectedKeys.js'
+import { expectedPluginKeys } from '../fixtures/expectedPluginKeys.js'
 
 const suite = createSuite('theme (node)')
 
-const properties = Object.keys(expectedKeys)
+const properties = Object.keys(expectedPluginKeys)
 properties.forEach(property => {
   suite(`properly configures ${property}`, context => {
     const resolvedConfig = resolveConfig({ theme }),
           propertyTheme = property === 'colors' ? resolvedConfig.theme.colors.blue : resolvedConfig.theme[property],
           keys = Object.keys(propertyTheme),
-          assertion = equalExceptOrder(keys, expectedKeys[property], property)
+          assertion = equalExceptOrder(keys, expectedPluginKeys[property], property)
           
     assert.ok(assertion)
   })
@@ -46,6 +46,22 @@ suite('includes non-palette colors', context => {
         nonPaletteColors = ['black', 'white', 'transparent', 'inherit', 'current']
 
   assert.ok(nonPaletteColors.every(hue => hues.includes(hue)))
+})
+
+suite(`doesn't include unexpected keys`, () => {
+  const keys = Object.keys(theme),
+        value = true,
+        plugins = Object.keys(expectedPluginKeys),
+        expected = keys.reduce((expected, key) => {
+          if (!plugins.includes(key)) {
+            console.log(key)
+          }
+
+          return plugins.includes(key) && expected
+        }, true)
+
+  
+  assert.is(value, expected)
 })
 
 suite.run()

@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs'
 import { empty } from '@baleada/prepare'
-import baleadaTheme from '../lib/index.js'
+import { theme as baleadaTheme } from '../lib/index.js'
 import defaultConfig from 'tailwindcss/defaultConfig.js'
 import resolveConfig from 'tailwindcss/resolveConfig.js'
 
@@ -249,11 +249,6 @@ const prefixes = {
     name: 'Divide width',
     prefix: 'divide-x',
     notes: '`.divide-x` is shown here, but the same configuration applies for `.divide-y`.',
-  },
-  objectPosition: {
-    name: 'Object position',
-    prefix: 'object',
-    notes: '',
   },
   opacity: {
     name: 'Opacity',

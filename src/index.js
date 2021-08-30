@@ -24,16 +24,8 @@ export const theme = {
     ...defaultTheme.minHeight,
     ...screen(theme('screens')), // Useful when styling landing pages to look nice in landscape orientation on mobile devices
   }),
-  maxHeight: {
-    ...defaultTheme.maxHeight,
-  },
   width: theme => ({
     ...defaultTheme.width(theme),
     ...screen(theme('screens')),
-  }),
-  objectPosition: {
-    ...defaultTheme.objectPosition,
-    'center-top': 'center top',
-    'center-bottom': 'center bottom',
-  },
+  })
 }
